@@ -3,7 +3,7 @@ export const data = {
     datasets: [
       {
         backgroundColor: ['#d487e0', '#87c7f8', '#8aeaab', '#eeea88'],
-        data: [40, 20, 80, 10]
+        data: []
       }
     ]
   }
@@ -17,11 +17,11 @@ export const config = {
       legend: {
         position: 'left',
         labels: {
-          boxWidth: 15,
-          boxHeight: 15,
+          boxWidth: 20,
+          boxHeight: 20,
           textAlign: 'left',
           font: {
-            size: 8
+            size: 12
           }
         } 
       },

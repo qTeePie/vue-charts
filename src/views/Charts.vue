@@ -6,7 +6,17 @@
     </div>
     <div class="chartContainer">
       <h3>Exercise - Doughnut Chart </h3>
-        <DoughnutChart />
+      <div class="doughnutContainer">
+        <DoughnutChart :stats="this.stats" />
+        <div class="fetchFromApi">
+      <button @click.prevent="">FETCH FROM API</button>
+      <div class="fetchingMessage"><h3 v-if="fetching">Fetching Data!</h3></div>
+      <div v-if="error">
+        <h3>erorr!! {{ error }}</h3>
+      </div>
+      <div class="fetchingMessage"><h3 v-if="stats">{{ JSON.stringify(stats.disciplineMinutes) }}</h3></div>
+    </div>
+    </div>
     </div>
   </div>
 </template>
@@ -28,17 +38,12 @@ export default {
       stats,
       error, 
       fetching,
-      statsByUser
+      statsByUser,
     }
   },
-  mounted() {
-    this.statsByUser();
-  },
-  methods: {
-    getStats(){
-      this.statsByUser().then(() => console.log(this.stats));
-    }
-  }
+ mounted() {
+  this.statsByUser();
+ },
 }
 </script>
 
@@ -58,10 +63,48 @@ body {
 }
 .chartContainer {
   height: 500px;
-  display: block;
+  display: flex;
+  flex-direction: column;
   border-bottom: 2px solid #d798d0;
   padding-bottom: 3rem;
   min-width: fit-content
+}
+
+.chartContainer h3 {
+  margin-bottom: 3rem;
+}
+
+.doughnutContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.fetchData {
+    padding: 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.fetchFromApi {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+
+.fetchingMessage {
+  width: fit-content;
+  height: 50px;
+}
+
+button {
+    background-color: #eaa3e1;
+    width: 10rem;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-weight: 600;
 }
 
 @media (max-width: 800px){
