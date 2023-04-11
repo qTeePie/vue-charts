@@ -12,7 +12,7 @@ let myChart = null;
 
 const UpdatePieChart = (stats, config) => {
   const sportDisciplines = new Map(Object.entries(JSON.parse(JSON.stringify(stats.disciplineMinutes))));
-  config.data.labels = Array.from(sportDisciplines.keys());;
+  config.data.labels = Array.from(sportDisciplines.keys());
   config.data.datasets[0].data = Array.from(sportDisciplines.values());
   
   console.log("THIS IS MOTHEFUCKING STATSSS");
