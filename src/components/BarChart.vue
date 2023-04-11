@@ -1,11 +1,11 @@
 <template>
-<div id="app">
+  <div class="barChart">
     <Bar
     id="my-chart-id"
     :options="options"
     :data="data"
     />
-</div>
+  </div>
 </template>
   
 <script>
@@ -24,7 +24,10 @@ export default {
 
 </script>
   
-  <style>
-  
-  
-  </style>
+<style>
+.barChart {
+  height: 25rem;
+  width: fit-content;
+}
+
+</style>

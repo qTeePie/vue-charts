@@ -5,24 +5,42 @@ export const data = {
       'March',
       'April',
       'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December'
     ],
     datasets: [
       {
         label: 'Some Data',
         backgroundColor: '#d798d0',
-        data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
+        data: [ 15, 8, 25, 16, 12]
       }
     ]
   }
   
   export const options = {
     responsive: true,
-    maintainAspectRatio: false
+    maintainAspectRatio: false,
+    indexAxis: 'x',
+    borderWidth: 1,
+    borderSkipped: false,
+    borderRadius: 20,
+    barThickness: 40,
+    scales: {
+      y: {
+        grid: {
+          lineWidth: 0.5,
+        },
+        stacked: true,
+        ticks: {
+          min: 0,
+        }
+      },
+      x: {
+        grid: {
+          lineWidth: 0.5,
+        },
+        stacked: true,
+        ticks: {
+          stepSize: 1,
+        }
+      } 
+    }
   }

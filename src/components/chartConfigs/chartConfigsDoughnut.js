@@ -1,15 +1,32 @@
 export const data = {
-    labels: ['VueJs', 'EmberJs', 'ReactJs', 'AngularJs'],
+    labels: [],
     datasets: [
       {
-        backgroundColor: ['#41B883', '#E46651', '#00D8FF', '#DD1B16'],
+        backgroundColor: ['#d487e0', '#87c7f8', '#8aeaab', '#eeea88'],
         data: [40, 20, 80, 10]
       }
     ]
   }
-  
-  export const options = {
+
+export const config = {
+  type: 'doughnut',
+  data,
+  options: {
     responsive: true,
-    maintainAspectRatio: false
+    plugins: {
+      legend: {
+        position: 'left',
+        labels: {
+          boxWidth: 15,
+          boxHeight: 15,
+          textAlign: 'left',
+          font: {
+            size: 8
+          }
+        } 
+      },
+    },
+  maintainAspectRatio: false
   }
+};
   
